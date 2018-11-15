@@ -1,16 +1,19 @@
 p{
-    
+    text-align: justify;
+    text-indent: 50px;
+    font-size: 1.3 em;
+    font-family: sans-serif;
     color: black;
 }
 
 ul{
    
    margin:0; padding:0;
-    width:300px;
+    width:1350px;
 }
 
 li{
-    list-style: none;
+    list-style: ;
 }
 
 
@@ -21,9 +24,14 @@ li a{
     background-color: #09c;
     margin-bottom: 1px;
     padding: 5px 3px;
-    color: #FFF;
+    color: #E2A9F3;
 }
 
 li a:hover{
-    background: blue;
+    background: #E2A9F3;
+}
+
+h1{
+    text-align: center;
+    background: #E2A9F3;
 }
