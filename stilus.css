@@ -1,35 +1,12 @@
 p{
     text-align: justify;
-    text-indent: 50px;
+   
     font-size: 1.3 em;
     font-family: sans-serif;
     color: black;
 }
 
-ul{
-   
-   margin:0; padding:0;
-    width:1350px;
-}
 
-li{
-    list-style: ;
-}
-
-
-li a{
-    
-    display: block;
-    text-decoration: none;
-    background-color: #09c;
-    margin-bottom: 1px;
-    padding: 5px 3px;
-    color: #E2A9F3;
-}
-
-li a:hover{
-    background: #E2A9F3;
-}
 
 h1{
     text-align: center;
