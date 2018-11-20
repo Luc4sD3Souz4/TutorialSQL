@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title> Tutorial SQL </title>
-        <link href="stilus.css" rel="stylesheet">
+        <link href="_css/stilus.css" rel="stylesheet">
            
     </head>
     
@@ -13,35 +13,28 @@
     <body>
         
       <img src="https://plugge.com.br/wp-content/uploads/2016/02/curso-sql-topo.jpg" alt="Topo SQL" width="1200" height="200">
-           
-
-       
-           <ul>
+    
+          
         
         <h1> O que é? </h1>
                
-               <p>
-                   
-               A linguagem SQL (Structured Query Language) é o recurso mais conhecido por DBAs e programadores para a execução de comandos em bancos de dados relacionais,  permite acessar e manipular bancos de dados. tornando-se um padrão do American National Standards Institute (ANSI) em 1986, e da International Organization for Standardization (ISO) em 1987.
+              
+                      <p>  A linguagem SQL (Structured Query Language) é o recurso mais conhecido por DBAs e programadores para a execução de comandos em bancos de dados relacionais,  permite acessar e manipular bancos de dados. tornando-se um padrão do American National Standards Institute (ANSI) em 1986, e da International Organization for Standardization (ISO) em 1987.
 O SQL é o recurso mais conhecido por DBAs e programadores para a execução de comandos em bancos de dados relacionais. É por meio dela que criamos tabelas, colunas, índices, atribuímos permissões a usuários, bem como realizamos consultas a dados. Enfim, é utilizando a SQL que “conversamos” com o banco de dados.
 Essa breve descrição já deixa clara a importância da compreensão e domínio sobre tal recurso. Saiba, também, que ela facilita não apenas a execução de tarefas em SGBDs, mas também o diálogo entre profissionais de banco de dados e programadores.
-Com base nisso, aprender sobre SQL, a Structured Query Language, passa a ser fundamental para qualquer um que deseja atuar nessas áreas.
-                   
-                   </p>
+Com base nisso, aprender sobre SQL, a Structured Query Language, passa a ser fundamental para qualquer um que deseja atuar nessas áreas. 
+        
 <br><br>
-<h2>Organização da SQL:</h2>
-<br><br>
-<li>DQL - Linguagem de Consulta de Dados - Define o comando utilizado para que possamos consultar (SELECT) os dados armazenados no banco;</li>
-<br><br>
-<li>DML - Linguagem de Manipulação de Dados - Define os comandos utilizados para manipulação de dados no banco (INSERT, UPDATE e DELETE);</li>
-<br><br>
-<li>DDL - Linguagem de Definição de Dados - Define os comandos utilizados para criação (CREATE) de tabelas, views, índices, atualização dessas estruturas (ALTER), assim como a remoção (DROP);</li>
-<br><br>
-<li>DCL - Linguagem de Controle de Dados - Define os comandos utilizados para controlar o acesso aos dados do banco, adicionando (GRANT) e removendo (REVOKE) permissões de acesso;</li>
-<br><br>
-<li>DTL - Linguagem de Transação de Dados - Define os comandos utilizados para gerenciar as transações executadas no banco de dados, como iniciar (BEGIN) uma transação, confirmá-la (COMMIT) ou desfazê-la (ROLLBACK).</li>
+DQL-Linguagem de Consulta de Dados - Define o comando utilizado para que possamos consultar (SELECT) os dados armazenados no banco;<br>
 
-               
+DML-Linguagem de Manipulação de Dados - Define os comandos utilizados para manipulação de dados no banco (INSERT, UPDATE e DELETE);<br>
+
+DDL-Linguagem de Definição de Dados - Define os comandos utilizados para criação (CREATE) de tabelas, views, índices, atualização dessas estruturas (ALTER), assim como a remoção (DROP);<br>
+DCL-Linguagem de Controle de Dados - Define os comandos utilizados para controlar o acesso aos dados do banco, adicionando (GRANT) e removendo (REVOKE) permissões de acesso;<br>
+
+DTL-Linguagem de Transação de Dados - Define os comandos utilizados para gerenciar as transações executadas no banco de dados, como iniciar (BEGIN) uma transação, confirmá-la (COMMIT) ou desfazê-la (ROLLBACK).
+
+          </p>
                
         <h1> Pra que serve? </h1>
                
@@ -59,196 +52,185 @@ Com base nisso, aprender sobre SQL, a Structured Query Language, passa a ser fun
                     <li>SQL pode definir permissões em tabelas, procedimentos e visualizações</li>
                    
                </ul>
+               
+        <h1> Comandos básicos </h1>
+        <br>
+        <h2> .SQL Create </h2>
+               
+               <p>
+               Para criar um Banco de Dados ou uma tabela utilizamos o comando Create. <br><br>
+Create Database nome_banco; <br>
+Create Table nome_da_tabela (
+	nome varchar(30)
+);
+
+               </p>
+               
+               
+                <br>
+               <h2>.SQL Alter Table</h2>
+             
+               <p>
+               Para alterar a estrutura de uma tabela, utilizamos o alter table.
+Para adicionarmos colunas em nossa tabela utilizamos ADD , conforme exemplo abaixo;
+               </p>
+               <img src="imagem/Alter%20Table.JPG" width="400">
         
-        <h1> SQL Select </h1>
+               <br>
+               <h2>.SQL Insert Into</h2>
                
                <p>
-               O comando select é o “comando base” para todos os comandos de pesquisa de informações no banco de dados.
+               Para adicionarmos dados nas colunas  utilizamos os comandos INSERT INTO VALUES conforme exemplo abaixo;<br>
+ 
+Inserindo alguns Dados:<br>
+ 
+insert into Cliente values('Joao','m','joao@gmail.com',988638273,'22923110','Maia Lacerda - Estacio - Rio de Janeiro - RJ’);<br>
+ 
+insert into Cliente values('Celia','f','celia@gmail.com',541521456,'25078869','Riachuelo - Centro - Rio de Janeiro - RJ');<br>
+
+insert into Cliente values('Jorge','m',null,885755896,'58748895','oscar cury - Bom Retiro - Patos de Minas - MG'); <br>
+ 
+insert into Cliente(nome,sexo,endereco,telefone,cpf) values('Lilian','f','Senador Soares - Tijuca - Rio de Janeiro - RJ','947785696',887774856);
+
+               </p><br>
+               
+        <h2> .SQL Select </h2>
+               
+               <p>
+               Através do comando select * from nome_tabela, é possível visualizar todos os dados inseridos na tabela.
                </p>
                
-        <h1> SQL Where </h1>
+               <img src="imagem/Select.JPG">
+        
+               <br> <br> <br>
+        
+        
+               <h3>
+               Alguns selects para exibição dos dados:
+               </h3>
+               
+               <img src="imagem/SelectDois.JPG">
+                <br> <br>
+        <h2> .SQL Where </h2>
+               
+               
+               <img src="imagem/Where.JPG">
+        
+        <h2> SQL Like </h2>
+        
+               
+               
+               <img src="imagem/Like.JPG">
+               <br> <br>
+        <h2> .SQL Caracter Coringa </h2>
                
                <p>
-               O comando de restrição “where” é o comando de restrição mais utilizado. O comando “where” quer dizer “onde”, ou seja, com a utilização do comando “where”, serão exibidas as informações solicitadas, onde as mesmas obedecerem as restrições informadas.
-               </p>
-               
-        <h1> SQL Distinct </h1>
-               
-               <p>
-               O comando “distinct” consiste em exibir as informações da tabela utilizada de maneira distinta, de forma que informações não sejam exibidas de maneira redundante.
-               </p>
-               
-        <h1> SQL From </h1>
-               
-               <p>
-               O comando “from” significa “de”, ou seja, indica de onde algo está sendo chamado.
-               </p>
-               
-        <h1> SQL Insert Into </h1>
-               
-               <p>
-               A instrução INSERT INTO é usada para inserir novos registros em uma tabela.
-               </p>
-               
-        <h1> SQL Update </h1>
-               
-               <p>
-               A instrução UPDATE é usada para modificar os registros existentes em uma tabela.
-               </p>
-               
-        <h1> SQL Delete </h1>
-               
-               <p>
-               A instrução DELETE é usada para excluir registros existentes em uma tabela.
-               </p>
-               
-        <h1> SQL Select Top </h1>
-               
-               <p>
-               A cláusula SELECT TOP é usada para especificar o número de registros a serem retornados.
-A cláusula SELECT TOP é útil em tabelas grandes com milhares de registros. Retornar um grande número de registros pode afetar o desempenho.
+               Caracter Coringa “%” :
+               SELECT NOME, SEXO FROM
+               CLIENTE
+WHERE ENDERECO LIKE '%RJ';
 
                </p>
                
-        <h1> SQL Min </h1>
+               <img src="imagem/Coringa.JPG">
+               
+        <br> <br>
+        
+               <h3>
+               SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+WHERE ENDERECO LIKE '%CENTRO%';
+               </h3>
+               
+               <img src="imagem/CoringaDois.JPG">
+               
+               <img src="imagem/CoringaTres.JPG">
+               
+        <h2> SQL Operadores Lógicos </h2>
                
                <p>
-               A função MIN () retorna o menor valor da coluna selecionada.
+               “OR”
+ 
+SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+WHERE 
+SEXO LIKE 'M' OR ENDERECO LIKE '%RJ';
                </p>
                
-        <h1> SQL Max </h1>
+               <img src="imagem/Logico.JPG">
                
                <p>
-               A função MAX () retorna o maior valor da coluna selecionada.
+               “AND”
+ 
+SELECT NOME, SEXO, ENDERECO  FROM CLIENTE
+WHERE 
+SEXO LIKE 'M' AND ENDERECO LIKE '%RJ';
                </p>
                
-        <h1> SQL Count </h1>
+               <img src="imagem/LogicoDois.JPG">
                
                <p>
-               A função COUNT () retorna o número de linhas que corresponde a um critério especificado.
+               SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+WHERE
+SEXO LIKE 'F' AND ENDERECO LIKE '%TIJUCA%';
                </p>
                
-        <h1> SQL Avg </h1>
+               <img src="imagem/LogicoTres.JPG">
+               
+        <h2>.SQL Count</h2>
                
                <p>
-               A função AVG () retorna o valor médio de uma coluna numérica.
+               SELECT COUNT(*) FROM CLIENTE;
                </p>
                
-        <h1> SQL Sum </h1>
+               <img src="imagem/Count.JPG">
                
                <p>
-               A função SUM () retorna a soma total de uma coluna numérica.
+               SELECT COUNT(*) AS "QUANTIDADE DE REG TAB CLIENTE"
+FROM CLIENTE;
                </p>
                
-        <h1> SQL Like </h1>
+               <img src="imagem/CountDois.JPG">
+            
+        <h2> SQL Group By </h2>
                
-               <p>
-               O operador LIKE é usado em uma cláusula WHERE para procurar um padrão especificado em uma coluna.
+               <h3>
+               SELECT SEXO, COUNT(*) AS "QUANTIDADE"
+FROM CLIENTE
+GROUP BY SEXO;
 
-Existem dois curingas usados ​​em conjunto com o operador LIKE:
-
-    % - O sinal de porcentagem representa zero, um ou vários caracteres
-    _ - O sublinhado representa um único caractere
-               </p>
+               </h3>
                
-        <h1> SQL In </h1>
+               <img src="imagem/GroupBy.JPG">
+               
+        <h2> .SQL Update </h2>
                
                <p>
-               O operador IN permite que você especifique vários valores em uma cláusula WHERE.
-O operador IN é uma abreviação de várias condições OR.
-
-               </p>
                
-        <h1> SQL Between </h1>
-               
-               <p>
-               O operador BETWEEN seleciona valores dentro de um determinado intervalo. Os valores podem ser números, texto ou datas.
-O operador BETWEEN é inclusivo: os valores inicial e final são incluídos.
-
-               </p>
-               
-        <h1> SQL Aliases </h1>
-               
-               <p>
-               Os aliases SQL são usados para fornecer uma tabela ou uma coluna em uma tabela, um nome temporário.
-Os aliases costumam ser usados para tornar os nomes das colunas mais legíveis.
-Um alias existe apenas para a duração da consulta.
-
-               </p>
-               
-        <h1> SQL Having </h1>
-               
-               <p>
-               A cláusula HAVING foi incluída no SQL porque a palavra-chave WHERE não pôde ser usada com funções agregadas.
-               </p>
-               
-        <h1> SQL Exists </h1>
-               
-               <p>
-               O operador EXISTS é usado para testar a existência de qualquer registro em uma subconsulta.
-O operador EXISTS retornará true se a subconsulta retornar um ou mais registros.
+                Atualiza a tabela onde for selecionada.
 
                </p>
                
-        <h1> SQL Any </h1>
+               <img src="imagem/Update.png">
+               
+               <img src="imagem/UpdateDois.png">
+               
+        <h2> SQL Delete </h2>
                
                <p>
-               Os operadores ANY e ALL são usados ​​com uma cláusula WHERE ou HAVING.
-O operador ANY retornará true se algum dos valores da subconsulta atender à condição.
+               Para deletar um dado de uma tabela utilizamos o comando Delete.
+Delete from Cliente
+Where nome = lilian;
 
                </p>
                
-        <h1> SQL All </h1>
+        <h2> SQL Drop </h2>
                
                <p>
-               O operador ALL retorna true se todos os valores da subconsulta atenderem à condição.
-               </p>
-               
-        <h1> SQL Case </h1>
-               
-               <p>
-               A instrução CASE passa por condições e retorna um valor quando a primeira condição é atendida (como uma instrução IF-THEN-ELSE). Então, uma vez que uma condição é verdadeira, ela irá parar de ler e retornar o resultado.
-Se nenhuma condição for verdadeira, retornará o valor na cláusula ELSE.
-Se não houver nenhuma parte do ELSE e nenhuma condição for verdadeira, ela retornará NULL.
+               Para excluir uma tabela ou Banco de Dados completamente utilizamos o comando Drop.
+Drop Table Cliente;
+Drop Database Cadastro;
 
                </p>
                
-        <h1> SQL Order By </h1>
-               
-               <p>
-               O comando “order by” ordena todas as informações de uma tabela em ordem crescente;
-               </p>
-               
-        <h1> SQL Order By Desc </h1>
-               
-               <p>
-               O comando “order by desc” ordena todas as informações de uma tabela em ordem decrescente.
-               </p>
-               
-        <h1> SQL Group By </h1>
-               
-               <p>
-               A instrução GROUP BY é frequentemente usada com funções agregadas (COUNT, MAX, MIN, SUM, AVG) para agrupar o conjunto de resultados em uma ou mais colunas.
-               </p>
-               
-        <h1> SQL Not </h1>
-               
-               <p>
-               A condição lógica “not” é utilizada para acrescentar uma condição de negação, possibilitando a exclusão de registros na seleção;
-               </p>
-               
-        <h1> SQL And </h1>
-               
-               <p>
-               A condição lógica “and” é utilizada para acrescentar uma condição de inclusão, ou seja, o resultado será exibido apenas se todos os critérios de pesquisa forem obedecidos;
-               </p>
-               
-        <h1> SQL Or </h1>
-               
-               <p>
-               A condição lógica “or” é utilizada para acrescentar uma condição de alternativa, ou seja, o resultado será exibido caso seja obedecido o primeiro OU caso seja obedecido o segundo critério.
-               </p>
-                                 
           </ul>
         
     
